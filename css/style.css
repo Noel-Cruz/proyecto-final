@@ -1,0 +1,437 @@
+body {
+  margin: 0;
+}
+
+body ul {
+  margin-block: 0;
+  list-style: none;
+}
+
+body a {
+  text-decoration: none;
+}
+
+body #root header {
+  display: flex;
+  flex-direction: column;
+}
+
+body #root header nav {
+  width: 100%;
+  height: 7vw;
+  display: flex;
+  justify-content: center;
+  background-color: rgb(45, 45, 51);
+}
+
+body #root header nav form {
+  align-self: center;
+}
+
+body #root header nav form fieldset {
+  padding: 0;
+  border: none;
+  display: flex;
+}
+
+body #root header nav form fieldset input {
+  width: 28vw;
+  height: 2.6rem;
+  padding-left: 0.5rem;
+  outline: none;
+  border: 2px rgb(145, 145, 145) solid;
+  border-right: none;
+  border-radius: 0.8rem 0 0 0.8rem;
+  font-size: 1.2rem;
+}
+
+body #root header nav form fieldset input::placeholder {
+  font-family: "Montserrat", sans-serif;
+  font-size: 1rem;
+  color: rgb(77, 77, 77);
+}
+
+body #root header nav form fieldset input:focus::placeholder {
+  visibility: hidden;
+}
+
+body #root header nav form button {
+  height: 2.6rem;
+  border: 2px rgb(145, 145, 145) solid;
+  border-left: none;
+  border-radius: 0 0.8rem 0.8rem 0;
+  font-size: 1.2rem;
+}
+
+body #root header nav ul {
+  align-self: center;
+  display: flex;
+}
+
+body #root header nav ul li {
+  list-style: none;
+  display: flex;
+  align-items: center;
+}
+
+body #root header nav ul li a {
+  color: white;
+  text-decoration: none;
+}
+
+body #root header nav ul li a > :nth-child(1) {
+  margin-inline: 0.7rem;
+}
+
+body #root header nav ul li a span {
+  font-family: "Montserrat", sans-serif;
+}
+
+body #root header nav ul li:nth-child(3) a div span {
+  display: block;
+  width: fit-content;
+  padding: 1px 3px;
+  border-radius: 8px;
+  background-color: rgb(145, 198, 18);
+  font-family: "Roboto Mono", monospace;
+  font-size: 12px;
+  position: relative;
+  bottom: 0.5rem;
+  left: 1.6rem;
+}
+
+body #root header > div {
+  background-color: #e7e7e7;
+  display: flex;
+  justify-content: center;
+}
+
+body #root header > div ul {
+  flex-basis: 83rem;
+  font-family: "Montserrat", sans-serif;
+  padding-inline: 0;
+  display: flex;
+}
+
+body #root header > div > ul > :nth-child(1) {
+  letter-spacing: 0.5px;
+  font-weight: bold;
+  padding: 0.3rem 0 0.3rem 0.9rem;
+  display: flex;
+  align-items: center;
+}
+
+body #root header > div ul > :nth-child(1)::after {
+  display: block;
+  content: "";
+  width: 2px;
+  height: 2rem;
+  background-color: #c8c8c8;
+  margin-left: 0.6rem;
+}
+
+body #root header > div ul li a {
+  color: black;
+  padding: 0.9rem 1rem;
+  display: flex;
+  align-items: center;
+}
+
+body #root #main-index ul {
+  padding: 1rem 18%;
+  display: flex;
+  flex-flow: row wrap;
+  gap: 10px 2%;
+}
+
+body #root #main-index ul li {
+  flex-basis: 32%;
+  outline: 1px solid rgb(209, 209, 209);
+  border-radius: 6px;
+}
+
+body #root #main-index ul li a {
+  display: block;
+  padding-inline: 0.5rem;
+}
+
+body #root #main-index ul li a div picture {
+  display: block;
+}
+
+body #root #main-index ul li a div picture img {
+  width: 100%;
+}
+
+body #root #main-index ul li a div dl {
+  font-family: "Montserrat", sans-serif;
+  padding: 35px 15px 10px;
+}
+
+body #root #main-index ul li a div dl dd {
+  margin: 0;
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: black;
+}
+
+body #root #main-index ul li a div dl dt {
+  color: #a1a1a1;
+}
+
+body #root main #ItemDetail {
+  width: 76%;
+  max-width: 80rem;
+  border-radius: 6px;
+  margin: 1rem auto;
+  padding: 0 0.9rem;
+  outline: 1px solid rgb(209, 209, 209);
+  display: flex;
+  flex-direction: column;
+}
+body #root main #ItemDetail > div {
+  display: flex;
+}
+body #root main #ItemDetail > div picture {
+  flex-basis: 0;
+  flex-grow: 1;
+}
+body #root main #ItemDetail > div picture img {
+  width: 100%;
+}
+body #root main #ItemDetail > div > div {
+  flex-basis: 0;
+  flex-grow: 1;
+  font-family: "Montserrat", sans-serif;
+  margin-inline: 2vw;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+}
+body #root main #ItemDetail > div > div h5 {
+  font-size: 1.3rem;
+}
+body #root main #ItemDetail > div > div > span {
+  font-size: 1.8rem;
+  margin-left: 0.2rem;
+  margin-bottom: 2rem;
+}
+body #root main #ItemDetail > div > div form {
+  width: 50%;
+  align-self: flex-start;
+  border: rgb(158, 158, 158) solid 2px;
+  border-radius: 6px;
+  padding: 1.2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+body #root main #ItemDetail > div > div form section {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+body #root main #ItemDetail > div > div form section button {
+  width: 3rem;
+  color: #3483FA;
+  background-color: #e4e4e4;
+  border: none;
+  font-weight: 600;
+  font-size: 1.4rem;
+  border-radius: 6px;
+}
+body #root main #ItemDetail > div > div form section p {
+  width: 4rem;
+  height: 4rem;
+  color: white;
+  background-color: rgb(145, 198, 18);
+  font-weight: 600;
+  font-size: 1.4rem;
+  border-radius: 50%;
+  display: grid;
+  place-content: center;
+}
+body #root main #ItemDetail > div > div form > button {
+  border-radius: 6px;
+  background-color: #3483FA;
+  border: none;
+  padding: 0.4rem 0.6rem;
+  color: rgb(245, 245, 245);
+  letter-spacing: 1px;
+  font-weight: 500;
+  font-size: 1.1rem;
+}
+body #root main #ItemDetail p {
+  font-size: 1.2rem;
+}
+body #root #main-cart {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+body #root #main-cart > div {
+  width: 85rem;
+  font-family: "Montserrat", sans-serif;
+}
+body #root #main-cart > div h1 {
+  height: 3rem;
+  font-size: 1.3rem;
+  background-color: #B4B4B4;
+  margin: 0;
+  padding-left: 1rem;
+  display: flex;
+  align-items: center;
+}
+body #root #main-cart > div > div {
+  display: flex;
+}
+body #root #main-cart > div > div > :nth-child(1) {
+  width: 80%;
+}
+body #root #main-cart > div > div > :nth-child(1) strong {
+  display: block;
+  margin-block: 2rem 1.5rem;
+}
+body #root #main-cart > div > div > :nth-child(1) ul {
+  padding-inline: 2%;
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+}
+body #root #main-cart > div > div > :nth-child(1) ul li {
+  display: flex;
+}
+body #root #main-cart > div > div > :nth-child(1) ul li:nth-last-child(n+2):not(:first-child) {
+  border-bottom: #cdcdcf solid 2px;
+}
+body #root #main-cart > div > div > :nth-child(1) ul li:nth-child(n+2) {
+  min-height: 8rem;
+  padding-bottom: 0.8rem;
+}
+body #root #main-cart > div > div > :nth-child(1) ul li:first-child :nth-child(1) {
+  flex-basis: 0;
+  flex-grow: 1;
+}
+body #root #main-cart > div > div > :nth-child(1) ul li:first-child :nth-child(2) {
+  width: 12%;
+}
+body #root #main-cart > div > div > :nth-child(1) ul li:first-child :nth-child(3) {
+  width: 12%;
+}
+body #root #main-cart > div > div > :nth-child(1) ul li:first-child :nth-child(4) {
+  width: 16%;
+}
+body #root #main-cart > div > div > :nth-child(1) ul li div:nth-child(1) {
+  flex-basis: 0;
+  flex-grow: 1;
+  display: flex;
+}
+body #root #main-cart > div > div > :nth-child(1) ul li div:nth-child(1) img {
+  width: 22%;
+}
+body #root #main-cart > div > div > :nth-child(1) ul li div:nth-child(1) span {
+  margin-inline: 1rem;
+}
+body #root #main-cart > div > div > :nth-child(1) ul li div:nth-child(2) {
+  width: 12%;
+  display: flex;
+  flex-direction: column;
+}
+body #root #main-cart > div > div > :nth-child(1) ul li div:nth-child(3) {
+  width: 12%;
+  display: flex;
+  flex-direction: column;
+}
+body #root #main-cart > div > div > :nth-child(1) ul li div:nth-child(4) {
+  width: 12%;
+  display: flex;
+  flex-direction: column;
+}
+body #root #main-cart > div > div > :nth-child(1) ul li div:nth-child(5) {
+  min-width: 4%;
+  cursor: pointer;
+  margin-top: 1rem;
+  display: flex;
+  flex-direction: column;
+}
+body #root #main-cart > div > div > :nth-child(2) {
+  width: 20%;
+  display: flex;
+  flex-direction: column;
+  row-gap: 1rem;
+}
+body #root #main-cart > div > div > :nth-child(2) form {
+  padding: 1.1rem 2.6%;
+  outline: #eee solid 1px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+body #root #main-cart > div > div > :nth-child(2) form h5 {
+  font-size: 1.1rem;
+}
+body #root #main-cart > div > div > :nth-child(2) form fieldset {
+  border: none;
+  font-size: 1.1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+}
+body #root #main-cart > div > div > :nth-child(2) form fieldset :nth-child(n+2) {
+  font-weight: 600;
+  display: flex;
+  flex-direction: column;
+}
+body #root #main-cart > div > div > :nth-child(2) form fieldset :nth-child(n+2) input {
+  padding: 4px;
+  border-radius: 4px;
+  font-size: 1rem;
+}
+body #root #main-cart > div > div > :nth-child(2) form div {
+  width: 100%;
+  font-size: 1.5rem;
+  border-top: #e3e3e3 solid 2px;
+  display: flex;
+  flex-direction: column;
+}
+body #root #main-cart > div > div > :nth-child(2) form div strong {
+  align-self: center;
+}
+body #root #main-cart > div > div > :nth-child(2) form div p {
+  font-size: 1.2rem;
+  margin: 0.5rem 1rem;
+  display: flex;
+  justify-content: space-between;
+}
+body #root #main-cart > div > div > :nth-child(2) form div p :first-child {
+  font-weight: 600;
+}
+body #root #main-cart > div > div > :nth-child(2) form div p span {
+  white-space: nowrap;
+}
+body #root #main-cart > div > div > :nth-child(2) form button {
+  width: 100%;
+  padding: 10px;
+  background-color: #75c701;
+  color: #FFFFFF;
+  cursor: pointer;
+  border: none;
+  border-radius: 3px;
+  font-size: 0.9rem;
+}
+body #root #main-cart > div > div > :nth-child(2) button {
+  align-self: center;
+  width: 94.8%;
+  padding: 10px;
+  background-color: #eaeaea;
+  color: #0f0f0f;
+  cursor: pointer;
+  border: none;
+  border-radius: 3px;
+  font-size: 0.9rem;
+}
+
+
+
+/*# sourceMappingURL=style.css.map */
