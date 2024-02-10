@@ -14,7 +14,7 @@ const ItemDetailContainer = () => {
   useEffect(()=>{
     getDocs(dbV).then((response)=>{
         const producto=response.docs.find((producto)=>producto.id===id);
-        setProducto(producto.data());
+        setProducto({id:producto.id,...producto.data()});
     })
   },[])
   return (

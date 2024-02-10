@@ -1,5 +1,36 @@
+import {useContext,useState,useEffect} from "react"
+import { contexto } from "../../Context/context";
+import ItemCart from "../ItemCart/ItemCart";
 
+import { db } from "../../sevices/config";
+import { addDoc,collection,query,getDocs} from "firebase/firestore";
 const Cart = () => {
+    
+    const{producAgregados,cantidadTolal,precioTotal,sumarCantidades}=useContext(contexto);
+    const[obj,setObj]=useState({productos:producAgregados.current},);
+    const[infoOrden,setInfoOrden]=useState([]);
+    const[listaCarro,setListaCarro]=useState(producAgregados.current);
+    function eliminarItemCart(id){
+        producAgregados.current=producAgregados.current.filter((obj)=>obj.id!=id);
+        setListaCarro(producAgregados.current);
+        sumarCantidades()
+    };
+    function generarOrden(e){
+        e.preventDefault();
+        setObj({...obj,fecha:new Date()});
+        addDoc(collection(db, "ordenes"), obj);
+        orden();
+    };
+
+
+    function orden(){
+        const dbO=query(collection(db,'ordenes'));
+        getDocs(dbO).then((res)=>{
+            setInfoOrden(res.docs)
+        })
+    };
+    
+    orden();
   return (
       <main id="main-cart">
           <div>
@@ -18,46 +49,13 @@ const Cart = () => {
                             <span>Cantidad</span>
                             <span>Subtotal</span>
                           </li>
-                          <li>
-                              <div>
-                                  <img src="../public/imgProductos/img6.png"/>
-                                  <span>OUTLET NOTEBOOK XPG XENIA 14 I5 1135G7 512GB 16GB 14 W10</span>
-                              </div>
-                              <div>
-                                  <span>$ 199000</span>
-                              </div>
-                              <div>
-                                  <span>4</span>
-                              </div>
-                              <div>
-                                  <span>$ 700056</span>
-                              </div>
-                              <div style={{background:'url(../trash-solid.svg) center center / 46% auto no-repeat',height:'1.9rem',width:'2rem'}}>
-
-                              </div>
-                          </li>
-                          <li>
-                              <div>
-                                  <img src="../public/imgProductos/img6.png"/>
-                                  <span>OUTLET NOTEBOOK XPG XENIA 14 I5 1135G7 512GB 16GB 14 W10</span>
-                              </div>
-                              <div>
-                                  <span>$ 199000</span>
-                              </div>
-                              <div>
-                                  <span>4</span>
-                              </div>
-                              <div>
-                                  <span>$ 700056</span>
-                              </div>
-                              <div style={{background:'url(../trash-solid.svg) center center / 46% auto no-repeat',height:'1.9rem',width:'2rem'}}>
-
-                              </div>
-                          </li>
+                          {
+                            listaCarro.map((producto)=><ItemCart key={producto.id} {...producto} eliminarItemCart={eliminarItemCart} />)
+                          }
                       </ul>
                   </section>
                   <section>
-                    <form>
+                    <form onSubmit={generarOrden}>
                         <h5>
                             Tu compra
                         </h5>
@@ -65,41 +63,58 @@ const Cart = () => {
                             <legend>Datos personales</legend>
                             <label >
                                 Nombre
-                                <input type="text" />
+                                <input type="text" onChange={(e)=>{setObj({...obj,nombre:e.target.value})}}/>
                             </label>
                             <label >
                                 Apellido
-                                <input type="text" />
+                                <input type="text" onChange={(e)=>{setObj({...obj,apellido:e.target.value})}}/>
                             </label>
                             <label >
                                 Telefono
-                                <input type="tel" />
+                                <input type="tel" onChange={(e)=>{setObj({...obj,telefono:e.target.value})}}/>
                             </label>
                             <label >
                                 Mail
-                                <input type="email"/>
+                                <input type="email" onChange={(e)=>{setObj({...obj,mail:e.target.value})}}/>
                             </label>
                             <label >
                                 Repetir mail
-                                <input type="email" />
+                                <input type="email" onChange={(e)=>{setObj({...obj,repetirMail:e.target.value})}}/>
                             </label>
                         </fieldset>
                         <div>
                             <strong>Total</strong>
                             <p>
                                 <span>Catidad:</span>
-                                <span>6</span>
+                                <span>{cantidadTolal}</span>
                             </p>
                             <p>
                                 <span>Precio:</span>
-                                <span>$ 997877</span>
+                                <span>$ {precioTotal}</span>
                             </p>
                         </div>
-                        <button type="button">Finalizar compra</button>
+                        <button type="submit">Finalizar compra</button>
                     </form>
                     <button type="button">
                         Agregar productos
                     </button>
+                    <ul>
+                        {
+                            infoOrden.map((doc)=>
+                            <li key={doc.id}>
+                            <span>
+                                Nombre: {doc.data().nombre}
+                            </span>
+                            <span>
+                            Codigo: {doc.id}
+                            </span>
+                            <span>
+                                4/5/2024
+                            </span>
+                            </li>
+                            )
+                        }
+                    </ul>
                   </section>
               </div>
           </div>

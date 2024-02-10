@@ -431,6 +431,25 @@ body #root #main-cart > div > div > :nth-child(2) button {
   border-radius: 3px;
   font-size: 0.9rem;
 }
+body #root #main-cart > div > div > :nth-child(2) ul {
+  padding: 0;
+}
+body #root #main-cart > div > div > :nth-child(2) ul li {
+  background-color: #3483FA;
+  color: #e1e1e1;
+  border-radius: 6px;
+  margin-bottom: 3px;
+  padding: 0.5rem;
+  display: flex;
+  flex-direction: column;
+}
+body #root #main-cart > div > div > :nth-child(2) ul li :nth-child(2) {
+  font-size: 0.9rem;
+}
+body #root #main-cart > div > div > :nth-child(2) ul li :nth-child(3) {
+  align-self: flex-end;
+  font-size: 0.82rem;
+}
 
 
 

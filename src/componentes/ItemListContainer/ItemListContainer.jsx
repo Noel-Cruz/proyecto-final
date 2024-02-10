@@ -1,12 +1,12 @@
 import { useState,useEffect } from 'react';
 import ItemList from '../ItemList/ItemList';
 import { useParams } from 'react-router-dom';
-
 import { getDocs,query,collection } from "firebase/firestore";
 import { db } from '../../sevices/config';
 
 const ItemListContainer = () => {
-  
+
+
 
   const [productos,setProductos]=useState([]);
   const {idCategoria}=useParams();
@@ -21,7 +21,6 @@ const ItemListContainer = () => {
         setProductos(productos.map((doc)=>({
           id:doc.id,...doc.data()
         })));
-        console.log(productos);
       }
     )
   };

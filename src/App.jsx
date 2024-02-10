@@ -5,10 +5,7 @@ import Categorias from "./componentes/Categorias/Categorias";
 import ItemDetailContainer from "./componentes/ItemDetailContainer/ItemDetailContainer";
 import Cart from "./componentes/Cart/Cart";
 import Context from "./Context/context";
-
-
 const App = () => {
-
   return (
     <>
       <BrowserRouter>
